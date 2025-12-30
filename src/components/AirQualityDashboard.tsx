@@ -117,12 +117,12 @@ const AirQualityDashboard = () => {
 
   const tableColumns = [
     {
-      title: 'Chỉ số',
+      title: t('airQuality.details.index'),
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: 'Giá trị hiện tại',
+      title: t('airQuality.details.currentValue'),
       dataIndex: 'value',
       key: 'value',
       render: (value: number, record: { unit: string }) =>
@@ -131,7 +131,7 @@ const AirQualityDashboard = () => {
           : 'N/A',
     },
     {
-      title: 'Mô tả',
+      title: t('airQuality.details.description'),
       dataIndex: 'description',
       key: 'description',
     },
@@ -141,59 +141,59 @@ const AirQualityDashboard = () => {
     ? [
         {
           key: '1',
-          name: 'PM2.5',
+          name: t('airQuality.pm25'),
           value: currentData.current.pm2_5,
           unit: 'μg/m³',
-          description: 'Bụi mịn PM2.5',
+          description: t('table.pm25Desc'),
         },
         {
           key: '2',
-          name: 'PM10',
+          name: t('airQuality.pm10'),
           value: currentData.current.pm10,
           unit: 'μg/m³',
-          description: 'Bụi mịn PM10',
+          description: t('table.pm10Desc'),
         },
         {
           key: '3',
-          name: 'NO₂',
+          name: t('airQuality.no2'),
           value: currentData.current.nitrogen_dioxide,
           unit: 'μg/m³',
-          description: 'Nitrogen Dioxide',
+          description: t('table.no2Desc'),
         },
         {
           key: '4',
-          name: 'O₃',
+          name: t('airQuality.o3'),
           value: currentData.current.ozone,
           unit: 'μg/m³',
-          description: 'Ozone',
+          description: t('table.o3Desc'),
         },
         {
           key: '5',
-          name: 'SO₂',
+          name: t('airQuality.so2'),
           value: currentData.current.sulphur_dioxide,
           unit: 'μg/m³',
-          description: 'Sulphur Dioxide',
+          description: t('table.so2Desc'),
         },
         {
           key: '6',
-          name: 'CO',
+          name: t('airQuality.co'),
           value: currentData.current.carbon_monoxide,
           unit: 'μg/m³',
-          description: 'Carbon Monoxide',
+          description: t('table.coDesc'),
         },
         {
           key: '7',
-          name: 'Bụi',
+          name: t('airQuality.dust'),
           value: currentData.current.dust,
           unit: 'μg/m³',
-          description: 'Bụi sa mạc',
+          description: t('table.dustDesc'),
         },
         {
           key: '8',
-          name: 'UV Index',
+          name: t('airQuality.uvIndex'),
           value: currentData.current.uv_index,
           unit: 'Index',
-          description: 'Chỉ số tia cực tím',
+          description: t('table.uvIndexDesc'),
         },
       ]
     : []
@@ -210,7 +210,7 @@ const AirQualityDashboard = () => {
         }}
       >
         <Title level={2} style={{ margin: 0 }}>
-          <EnvironmentOutlined /> Chất lượng không khí & Thời tiết Việt Nam
+          <EnvironmentOutlined /> {t('header.title')}
         </Title>
         <Space>
           <Select
@@ -219,11 +219,14 @@ const AirQualityDashboard = () => {
             style={{ width: 200 }}
             size="large"
           >
-            {VIETNAM_CITIES.map((city) => (
-              <Option key={city.name} value={city.name}>
-                {city.name}
-              </Option>
-            ))}
+            {VIETNAM_CITIES.map((city) => {
+              const cityName = t(`cities.${city.name}`, city.name)
+              return (
+                <Option key={city.name} value={city.name}>
+                  {cityName}
+                </Option>
+              )
+            })}
           </Select>
           <ReloadOutlined
             onClick={loadData}
@@ -359,7 +362,7 @@ const AirQualityDashboard = () => {
                     <Card title={t('info.title')}>
                       <Descriptions column={1} bordered>
                         <Descriptions.Item label={t('common.city')}>
-                          {selectedCity.name}
+                          {t(`cities.${selectedCity.name}`, selectedCity.name)}
                         </Descriptions.Item>
                         <Descriptions.Item label={t('common.coordinates')}>
                           {selectedCity.latitude.toFixed(4)}, {selectedCity.longitude.toFixed(4)}

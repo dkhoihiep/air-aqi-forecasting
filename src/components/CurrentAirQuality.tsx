@@ -28,7 +28,7 @@ const CurrentAirQuality = ({ data, city }: CurrentAirQualityProps) => {
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
           <div>
             <Text type="secondary" style={{ fontSize: 14 }}>
-              {city.name}
+              {t(`cities.${city.name}`, city.name)}
             </Text>
             <Title level={1} style={{ margin: '8px 0', fontSize: 48 }}>
               {aqi.toFixed(0)}
