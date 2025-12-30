@@ -1,0 +1,102 @@
+{
+  "common": {
+    "reload": "Tải lại",
+    "current": "Hiện tại",
+    "forecast": "Dự báo",
+    "fromModel": "Dự báo từ mô hình",
+    "noData": "Không có dữ liệu để hiển thị",
+    "error": "Lỗi",
+    "close": "Đóng",
+    "city": "Thành phố",
+    "coordinates": "Tọa độ",
+    "timezone": "Múi giờ"
+  },
+  "header": {
+    "title": "Chất lượng không khí & Thời tiết Việt Nam"
+  },
+  "tabs": {
+    "weather": "Thời tiết",
+    "airQuality": "Chất lượng không khí"
+  },
+  "weather": {
+    "title": "Thời tiết",
+    "current": "Thời tiết",
+    "forecast": "Dự báo thời tiết",
+    "forecastTooltip": "Dữ liệu dự báo từ mô hình thời tiết, cập nhật mỗi 12-24 giờ",
+    "temperature": "Nhiệt độ",
+    "humidity": "Độ ẩm",
+    "precipitation": "Lượng mưa",
+    "windSpeed": "Tốc độ gió",
+    "windDirection": "Hướng gió",
+    "pressure": "Áp suất",
+    "visibility": "Tầm nhìn",
+    "cloudCover": "Mây che phủ"
+  },
+  "airQuality": {
+    "title": "Chất lượng không khí",
+    "current": "Chất lượng không khí",
+    "forecast": "Dự báo chất lượng không khí",
+    "forecastTooltip": "Dữ liệu dự báo từ mô hình CAMS, cập nhật mỗi 12-24 giờ",
+    "aqi": "AQI",
+    "pm25": "PM2.5",
+    "pm10": "PM10",
+    "no2": "NO₂",
+    "o3": "O₃",
+    "so2": "SO₂",
+    "co": "CO",
+    "dust": "Bụi",
+    "uvIndex": "UV Index",
+    "status": {
+      "good": "Tốt",
+      "fair": "Khá",
+      "moderate": "Trung bình",
+      "poor": "Kém",
+      "veryPoor": "Rất kém",
+      "hazardous": "Nguy hiểm"
+    },
+    "details": {
+      "title": "Chi tiết các chỉ số",
+      "index": "Chỉ số",
+      "currentValue": "Giá trị hiện tại",
+      "description": "Mô tả"
+    }
+  },
+  "table": {
+    "pm25Desc": "Bụi mịn PM2.5",
+    "pm10Desc": "Bụi mịn PM10",
+    "no2Desc": "Nitrogen Dioxide",
+    "o3Desc": "Ozone",
+    "so2Desc": "Sulphur Dioxide",
+    "coDesc": "Carbon Monoxide",
+    "dustDesc": "Bụi sa mạc",
+    "uvIndexDesc": "Chỉ số tia cực tím"
+  },
+  "info": {
+    "title": "Thông tin"
+  },
+  "errors": {
+    "loadData": "Không thể tải dữ liệu. Vui lòng thử lại sau.",
+    "unknown": "Lỗi không xác định khi tải dữ liệu"
+  },
+  "chart": {
+    "forecastData": "Dữ liệu dự báo",
+    "noData": "Không có dữ liệu để hiển thị",
+    "temperature": "Nhiệt độ",
+    "humidity": "Độ ẩm",
+    "precipitation": "Lượng mưa",
+    "windSpeed": "Tốc độ gió",
+    "temperatureUnit": "Nhiệt độ (°C)",
+    "humidityUnit": "Độ ẩm (%)",
+    "precipitationUnit": "Lượng mưa (mm)",
+    "windSpeedUnit": "Tốc độ gió (km/h)",
+    "temperatureHumidityAxis": "Nhiệt độ (°C) / Độ ẩm (%)",
+    "precipitationWindAxis": "Lượng mưa (mm) / Gió (km/h)",
+    "warningThreshold": "Ngưỡng cảnh báo",
+    "aqi": "AQI",
+    "pm25": "PM2.5",
+    "pm10": "PM10",
+    "pm25Unit": "PM2.5 (μg/m³)",
+    "pm10Unit": "PM10 (μg/m³)"
+  }
+}
+
