@@ -1,74 +1,76 @@
-# Air Quality Dashboard
+# Air Quality & Weather Dashboard
 
-Frontend ứng dụng được xây dựng với React, TypeScript và Ant Design để theo dõi và dự báo chất lượng không khí tại Việt Nam.
+Frontend application built with React, TypeScript, and Ant Design to monitor and forecast air quality and weather in Vietnam.
 
-## Tính năng
+## Features
 
-- ✅ React 18 với TypeScript
-- ✅ Ant Design 5 cho UI components
-- ✅ Vite cho build tool nhanh chóng
-- ✅ Layout với sidebar có thể thu gọn
-- ✅ **Dashboard chất lượng không khí** với dữ liệu realtime từ Open-Meteo API
-- ✅ **Dashboard thời tiết** với dữ liệu realtime từ Open-Meteo Weather API
-- ✅ **Hiển thị AQI** (Air Quality Index) cho các thành phố lớn tại Việt Nam
-- ✅ **Hiển thị thời tiết**: Nhiệt độ, độ ẩm, lượng mưa, gió, áp suất
-- ✅ **Biểu đồ dự báo** 5 ngày cho AQI, PM2.5, PM10
-- ✅ **Chọn thành phố**: Hà Nội, TP. Hồ Chí Minh, Đà Nẵng
-- ✅ **Thống kê chi tiết**: PM2.5, PM10, NO₂, O₃, SO₂, CO, Dust, UV Index
-- ✅ Dashboard với thống kê
-- ✅ Quản lý người dùng (CRUD)
-- ✅ Trang cài đặt
+- ✅ React 18 with TypeScript
+- ✅ Ant Design 5 for UI components
+- ✅ Vite for fast build tool
+- ✅ **Multi-language** (Vietnamese / English) with react-i18next
+- ✅ **Air Quality Dashboard** with realtime data
+- ✅ **Weather Dashboard** with realtime data
+- ✅ **AQI Display** (Air Quality Index) for cities in Vietnam
+- ✅ **Weather Display**: Temperature, humidity, precipitation, wind, pressure, visibility
+- ✅ **AI-powered Forecast Charts** 5-day forecast for AQI, PM2.5, PM10
+- ✅ **AI-powered Weather Forecast Charts** 5-day forecast for temperature, humidity, precipitation, wind speed
+- ✅ **City Selection**: Support for 63 provinces/cities in Vietnam
+- ✅ **Detailed Statistics**: PM2.5, PM10, NO₂, O₃, SO₂, CO, Dust, UV Index
+- ✅ **Current and Forecast Data**: Clear distinction between measured data and AI predictions
 
-## Cài đặt
+## Installation
 
 ```bash
-# Cài đặt dependencies
+# Install dependencies
 npm install
 ```
 
-## Chạy ứng dụng
+## Running the Application
 
 ```bash
-# Chạy development server
+# Run development server
 npm run dev
 ```
 
-Ứng dụng sẽ mở tại `http://localhost:3000`
+The application will open at `http://localhost:3006`
 
 ## Build
 
 ```bash
-# Build cho production
+# Build for production
 npm run build
 ```
 
-## Preview production build
+## Preview Production Build
 
 ```bash
 # Preview build
 npm run preview
 ```
 
-## Cấu trúc dự án
+## Project Structure
 
 ```
 air/
 ├── src/
 │   ├── components/           # React components
-│   │   ├── Dashboard.tsx
-│   │   ├── AirQualityDashboard.tsx  # Dashboard chất lượng không khí
-│   │   ├── CurrentAirQuality.tsx   # Hiển thị AQI hiện tại
-│   │   ├── AQIChart.tsx            # Biểu đồ dự báo
-│   │   └── WeatherCard.tsx         # Hiển thị thời tiết
-│   │   ├── Users.tsx
-│   │   └── Settings.tsx
+│   │   ├── AirQualityDashboard.tsx  # Main dashboard (air quality & weather)
+│   │   ├── CurrentAirQuality.tsx   # Display current AQI
+│   │   ├── AQIChart.tsx            # Air quality forecast chart
+│   │   ├── WeatherCard.tsx         # Display current weather
+│   │   └── WeatherChart.tsx        # Weather forecast chart
 │   ├── services/             # API services
-│   │   ├── airQualityApi.ts  # Open-Meteo Air Quality API
-│   │   └── weatherApi.ts     # Open-Meteo Weather API
+│   │   ├── airQualityApi.ts  # Service to fetch air quality data
+│   │   └── weatherApi.ts     # Service to fetch weather data
 │   ├── types/               # TypeScript types
-│   │   ├── airQuality.ts    # Types cho dữ liệu chất lượng không khí
-│   │   └── weather.ts       # Types cho dữ liệu thời tiết
-│   ├── App.tsx              # Component chính
+│   │   ├── airQuality.ts    # Types for air quality data
+│   │   └── weather.ts       # Types for weather data
+│   ├── i18n/                # Internationalization
+│   │   ├── config.ts        # i18n configuration
+│   │   └── locales/         # Translation files
+│   │       ├── vi.json      # Vietnamese
+│   │       └── en.json      # English
+│   ├── App.tsx              # Main component
 │   ├── main.tsx             # Entry point
 │   └── index.css            # Global styles
 ├── index.html               # HTML template
@@ -77,72 +79,89 @@ air/
 └── vite.config.ts           # Vite config
 ```
 
-## Công nghệ sử dụng
+## Technologies Used
 
 - **React 18.2.0** - UI library
 - **TypeScript 5.2.2** - Type safety
 - **Ant Design 5.12.8** - UI component library
-- **@ant-design/charts 2.0.4** - Charts library cho biểu đồ
+- **Recharts 2.10.3** - Charts library for graphs
+- **react-i18next 13.5.0** - Internationalization
+- **i18next 23.7.6** - i18n framework
 - **Vite 5.0.8** - Build tool
-- **React Router DOM 6.21.1** - Routing (đã cài đặt, sẵn sàng sử dụng)
 
-## API sử dụng
+## Data Sources
 
-### 1. Open-Meteo Air Quality API
-- **Miễn phí, không cần API key** ✅
-- Dữ liệu chất lượng không khí theo giờ
-- Dự báo 5 ngày
-- Các chỉ số: AQI, PM2.5, PM10, NO₂, O₃, SO₂, CO, Dust, UV Index
-- Tài liệu: https://open-meteo.com/en/docs/air-quality-api
+### Realtime Data
+- Air quality and weather data updated in real-time
+- Metrics are continuously measured and updated
+- Support for monitoring 63 provinces/cities in Vietnam
 
-### 2. Open-Meteo Weather API
-- **Miễn phí, không cần API key** ✅
-- Dữ liệu thời tiết theo giờ
-- Dự báo 5 ngày
-- Các chỉ số: Nhiệt độ, Độ ẩm, Lượng mưa, Tốc độ gió, Hướng gió, Áp suất, Mây che phủ, Tầm nhìn
-- Tài liệu: https://open-meteo.com/en/docs
+### AI-Powered Forecasts
+- Uses AI models to forecast air quality and weather
+- 5-day forecast with high accuracy
+- Forecast data is periodically updated from prediction models
 
-### Yêu cầu của cả 2 API
-- ✅ **Hoàn toàn miễn phí** - Không cần đăng ký
-- ✅ **Không cần API key** - Chỉ cần gọi trực tiếp
-- ✅ **Chỉ cần tọa độ** - Latitude và Longitude
-- ✅ **Rate limit** - Không có giới hạn nghiêm ngặt cho mục đích giáo dục
-- ⚠️ **Giấy phép** - Miễn phí cho mục đích phi thương mại và giáo dục
+## Features
 
-## Tính năng Air Quality
+### Supported Provinces/Cities
+Full support for 63 provinces/cities in Vietnam, including:
+- 5 centrally-governed cities: Hanoi, Ho Chi Minh City, Hai Phong, Da Nang, Can Tho
+- 58 other provinces/cities nationwide
 
-### Các thành phố được hỗ trợ
-- Hà Nội
-- TP. Hồ Chí Minh
-- Đà Nẵng
-
-### Chỉ số hiển thị
-- **AQI** (Air Quality Index) - Chỉ số chất lượng không khí tổng hợp
-- **PM2.5** - Bụi mịn 2.5 micromet
-- **PM10** - Bụi mịn 10 micromet
+### Air Quality Indices
+- **AQI** (Air Quality Index) - Comprehensive air quality index (European/US)
+- **PM2.5** - Fine particulate matter 2.5 micrometers
+- **PM10** - Fine particulate matter 10 micrometers
 - **NO₂** - Nitrogen Dioxide
 - **O₃** - Ozone
 - **SO₂** - Sulphur Dioxide
 - **CO** - Carbon Monoxide
-- **Dust** - Bụi sa mạc
-- **UV Index** - Chỉ số tia cực tím
+- **Dust** - Desert dust
+- **UV Index** - Ultraviolet index
 
-### Mức độ AQI
-- **Tốt** (0-20/50) - Chất lượng không khí tốt
-- **Khá/Trung bình** (20-40/50-100) - Chất lượng không khí khá tốt/trung bình
-- **Trung bình/Không tốt cho nhóm nhạy cảm** (40-60/100-150)
-- **Kém/Không tốt** (60-80/150-200) - Chất lượng không khí kém
-- **Rất kém** (80-100/200-300) - Chất lượng không khí rất kém
-- **Nguy hiểm** (>100/>300) - Chất lượng không khí nguy hiểm
+### Weather Indices
+- **Temperature** - Air temperature (°C)
+- **Humidity** - Relative humidity (%)
+- **Precipitation** - Rainfall (mm)
+- **Wind Speed** - Wind speed (km/h)
+- **Wind Direction** - Wind direction (8 main directions)
+- **Pressure** - Atmospheric pressure (hPa)
+- **Cloud Cover** - Cloud coverage percentage (%)
+- **Visibility** - Visibility distance (km)
 
-## Phát triển thêm
+### AQI Levels (European)
+- **Good** (0-20) - Good air quality
+- **Fair** (21-40) - Fairly good air quality
+- **Moderate** (41-60) - Moderate air quality
+- **Poor** (61-80) - Poor air quality
+- **Very Poor** (81-100) - Very poor air quality
+- **Hazardous** (>100) - Hazardous air quality
 
-Bạn có thể mở rộng ứng dụng bằng cách:
+### AQI Levels (US)
+- **Good** (0-50) - Good air quality
+- **Moderate** (51-100) - Moderate air quality
+- **Unhealthy for Sensitive Groups** (101-150)
+- **Unhealthy** (151-200) - Unhealthy air quality
+- **Very Unhealthy** (201-300) - Very unhealthy air quality
+- **Hazardous** (>300) - Hazardous air quality
 
-1. Thêm các thành phố khác tại Việt Nam
-2. Tích hợp Machine Learning để dự đoán AQI chính xác hơn
-3. Thêm cảnh báo khi AQI vượt ngưỡng an toàn
-4. Thêm tính năng so sánh chất lượng không khí giữa các thành phố
-5. Tích hợp Weather API để phân tích tương quan giữa thời tiết và AQI
-6. Thêm state management (Redux, Zustand, etc.) cho dữ liệu phức tạp hơn
+## Special Features
 
+- **Realtime Data**: Real-time updates of measured data
+- **AI-Powered Forecasts**: Uses AI models to accurately forecast air quality and weather
+- **Current vs Forecast Data Distinction**: Application clearly displays measured data and AI forecast data
+- **Multi-language**: Support for switching between Vietnamese and English
+- **Responsive Design**: Optimized for all devices
+- **Real-time Updates**: Data automatically updates when selecting a different city
+
+## Future Development
+
+You can extend the application by:
+
+1. Improving AI models for more accurate predictions
+2. Adding international cities
+3. Adding alerts when AQI exceeds safe thresholds
+4. Adding feature to compare air quality between cities
+5. Adding feature to save data history
+6. Adding push notifications when air quality changes
+7. Integrating additional AI models to increase forecast accuracy
