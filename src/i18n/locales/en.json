@@ -1,0 +1,102 @@
+{
+  "common": {
+    "reload": "Reload",
+    "current": "Current",
+    "forecast": "Forecast",
+    "fromModel": "Forecast from model",
+    "noData": "No data to display",
+    "error": "Error",
+    "close": "Close",
+    "city": "City",
+    "coordinates": "Coordinates",
+    "timezone": "Timezone"
+  },
+  "header": {
+    "title": "Air Quality & Weather Vietnam"
+  },
+  "tabs": {
+    "weather": "Weather",
+    "airQuality": "Air Quality"
+  },
+  "weather": {
+    "title": "Weather",
+    "current": "Weather",
+    "forecast": "Weather Forecast",
+    "forecastTooltip": "Forecast data from weather model, updated every 12-24 hours",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "precipitation": "Precipitation",
+    "windSpeed": "Wind Speed",
+    "windDirection": "Wind Direction",
+    "pressure": "Pressure",
+    "visibility": "Visibility",
+    "cloudCover": "Cloud Cover"
+  },
+  "airQuality": {
+    "title": "Air Quality",
+    "current": "Air Quality",
+    "forecast": "Air Quality Forecast",
+    "forecastTooltip": "Forecast data from CAMS model, updated every 12-24 hours",
+    "aqi": "AQI",
+    "pm25": "PM2.5",
+    "pm10": "PM10",
+    "no2": "NO₂",
+    "o3": "O₃",
+    "so2": "SO₂",
+    "co": "CO",
+    "dust": "Dust",
+    "uvIndex": "UV Index",
+    "status": {
+      "good": "Good",
+      "fair": "Fair",
+      "moderate": "Moderate",
+      "poor": "Poor",
+      "veryPoor": "Very Poor",
+      "hazardous": "Hazardous"
+    },
+    "details": {
+      "title": "Detailed Indices",
+      "index": "Index",
+      "currentValue": "Current Value",
+      "description": "Description"
+    }
+  },
+  "table": {
+    "pm25Desc": "Fine particulate matter PM2.5",
+    "pm10Desc": "Fine particulate matter PM10",
+    "no2Desc": "Nitrogen Dioxide",
+    "o3Desc": "Ozone",
+    "so2Desc": "Sulphur Dioxide",
+    "coDesc": "Carbon Monoxide",
+    "dustDesc": "Desert dust",
+    "uvIndexDesc": "UV Index"
+  },
+  "info": {
+    "title": "Information"
+  },
+  "errors": {
+    "loadData": "Unable to load data. Please try again later.",
+    "unknown": "Unknown error while loading data"
+  },
+  "chart": {
+    "forecastData": "Forecast data",
+    "noData": "No data to display",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "precipitation": "Precipitation",
+    "windSpeed": "Wind Speed",
+    "temperatureUnit": "Temperature (°C)",
+    "humidityUnit": "Humidity (%)",
+    "precipitationUnit": "Precipitation (mm)",
+    "windSpeedUnit": "Wind Speed (km/h)",
+    "temperatureHumidityAxis": "Temperature (°C) / Humidity (%)",
+    "precipitationWindAxis": "Precipitation (mm) / Wind (km/h)",
+    "warningThreshold": "Warning threshold",
+    "aqi": "AQI",
+    "pm25": "PM2.5",
+    "pm10": "PM10",
+    "pm25Unit": "PM2.5 (μg/m³)",
+    "pm10Unit": "PM10 (μg/m³)"
+  }
+}
+
